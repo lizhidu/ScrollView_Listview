@@ -1,11 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.dulzh.scrollview_listview.MyScrollView
+            android:id="@+id/gaoshou_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_vertical"
+            android:clipToPadding="false"
+            android:isScrollContainer="false"
+            android:paddingBottom="50dp"
+            android:paddingTop="90dp">
+
+            <com.example.dulzh.scrollview_listview.MyListView
+                android:id="@+id/listview_gaoshou_home"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"></com.example.dulzh.scrollview_listview.MyListView>
+        </com.example.dulzh.scrollview_listview.MyScrollView>
+
+        <RelativeLayout
+            android:id="@+id/hightup_rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="top"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cat_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/test" />
+
+            <TextView
+                android:id="@+id/cat_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/cat_avatar"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="9dp"
+                android:layout_toEndOf="@id/cat_avatar"
+                android:layout_toRightOf="@id/cat_avatar"
+                android:fontFamily="sans-serif-medium"
+                android:text="标题"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/other"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/cat_title"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@id/cat_title"
+                android:layout_marginBottom="5dp"
+                android:layout_toLeftOf="@+id/guanzhu"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zhicheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:text="二级标题"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/fans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="粉丝：500"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/zhibo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="直播：8条/天"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/guanzhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="关注"
+                 />
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2px"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="#EDEDED">-->
+
+            <!--</View>-->
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</LinearLayout>
